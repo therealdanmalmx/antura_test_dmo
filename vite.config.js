@@ -7,4 +7,11 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
   },
+  css: {
+    preprocessorOptions: {
+      css: {
+        additionalData: `@import '@fontsource/roboto/300.css';`,
+      },
+    },
+  },
 });
