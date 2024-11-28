@@ -1,5 +1,5 @@
-import MoonLoader from "react-spinners/MoonLoader";
-import { LoadingSpinnerProps } from "../types/types";
+import { MoonLoader } from "react-spinners";
+import { LoadingSpinnerProps } from "../types/types.tsx";
 
 const LoadingSpinner = ({ color, loading, size }: LoadingSpinnerProps) => {
   return (

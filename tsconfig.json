@@ -3,7 +3,7 @@
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "module": "NodeNext",
-    "moduleResolution": "nodenext",
+    "moduleResolution": "NodeNext",
     "strict": true,
     "sourceMap": true,
     "declaration": false,
@@ -12,7 +12,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "target": "ES2022",
+    "skipLibCheck": true,
+    "types": ["vitest/globals"]
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

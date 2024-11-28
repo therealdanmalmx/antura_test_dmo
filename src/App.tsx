@@ -1,15 +1,14 @@
 import "./App.css";
-import { UserProfileProvider } from "./context/UserProfileContext";
-import UserProfile from "./components/UserProfile";
+import { UserProfileProvider } from "./context/UserProfileContext.tsx";
+import UserProfile from "./components/UserProfile.tsx";
 import { BrowserRouter, Route } from "react-router";
 import { Routes } from "react-router";
-import ProfileList from "./components/ProfileList";
+import ProfileList from "./components/ProfileList.tsx";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { createTheme, Grid2, ThemeProvider } from "@mui/material";
-import CssBaseline from "@mui/material/CssBaseline";
 
 const theme = createTheme({
   typography: {
@@ -23,7 +22,6 @@ function App() {
       <UserProfileProvider>
         <BrowserRouter>
           <ThemeProvider theme={theme}>
-            <CssBaseline />
             <h1
               style={{
                 textAlign: "center",

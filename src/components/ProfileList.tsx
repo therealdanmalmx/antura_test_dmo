@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import UserProfileContext from "../context/UserProfileContext";
-import UserCard from "./UserCard";
+import UserProfileContext from "../context/UserProfileContext.tsx";
+import UserCard from "./UserCard.tsx";
 import { Grid2 } from "@mui/material";
 import { Link } from "react-router";
-import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
-import { UserProfileTypes } from "../types/types";
+import { ArrowCircleLeft } from "@mui/icons-material";
+import { UserProfileTypes } from "../types/types.tsx";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 
@@ -32,7 +32,7 @@ const ProfileList = () => {
         {" "}
         <Link to='/'>
           <h2>
-            <ArrowCircleLeftIcon fontSize='large' color='primary' />
+            <ArrowCircleLeft fontSize='large' color='primary' />
           </h2>
         </Link>
         <Grid2

@@ -1,5 +1,5 @@
 import React, { createContext, useState, ReactNode } from "react";
-import { UserProfileTypes } from "./../types/types";
+import { UserProfileTypes } from "../types/types.tsx";
 
 export interface UserProfileContextProps {
   profile: UserProfileTypes | null;

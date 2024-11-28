@@ -1,13 +1,16 @@
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import CardActionArea from "@mui/material/CardActionArea";
-import UserProfileContext from "../context/UserProfileContext";
-import { UserProfileTypes } from "./../types/types";
-import { Button } from "@mui/material";
 import { useContext } from "react";
 import { useLocation } from "react-router";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  Button,
+  CardActionArea,
+} from "@mui/material";
+
+import UserProfileContext from "../context/UserProfileContext.tsx";
+import { UserProfileTypes } from "../types/types.tsx";
 
 const UserCard = ({ profile }: { profile: UserProfileTypes }) => {
   const { addToList, removeFromList } = useContext(UserProfileContext);
@@ -22,7 +25,7 @@ const UserCard = ({ profile }: { profile: UserProfileTypes }) => {
     <Card
       sx={{
         width: 300,
-        height: "auto",
+        height: 450,
         m: 2,
         boxShadow: 3,
         borderRadius: 2,

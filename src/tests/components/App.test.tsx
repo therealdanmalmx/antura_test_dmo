@@ -1,6 +1,6 @@
 import { it, expect, describe } from "vitest";
 import { render, screen } from "@testing-library/react";
-import App from "../../App";
+import App from "../../App.tsx";
 
 describe("App", () => {
   it('renders the text "Get a user, any user!" ', () => {

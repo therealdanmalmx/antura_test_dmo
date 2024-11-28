@@ -1,10 +1,10 @@
 import { Alert, Button, Grid2 } from "@mui/material";
+import { Warning as WarningIcon } from "@mui/icons-material";
 import { useContext } from "react";
 import UserProfileContext from "../context/UserProfileContext.tsx";
 import UserCard from "./UserCard.tsx";
 import { Link } from "react-router";
 import LoadingSpinner from "./LoadingSpinner.tsx";
-import WarningIcon from "@mui/icons-material/Warning";
 
 const UserProfile = () => {
   const { profile, getRandomUser, profileList, isLoading, hasError } =
@@ -29,7 +29,7 @@ const UserProfile = () => {
           alignItems='center'
           height='100vh'
         >
-          <Alert icon={<WarningIcon fontSize='inherit' />} severity='warning'>
+          <Alert icon={<WarningIcon />} severity='warning'>
             Something went wrong. Please try again later.
             <div style={{ textAlign: "center" }}>
               <Button variant='text' onClick={() => window.location.reload()}>
