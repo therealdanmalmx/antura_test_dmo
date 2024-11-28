@@ -12,6 +12,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "outDir": "./dist",
     "allowImportingTsExtensions": true,
     "target": "ES2022",
     "skipLibCheck": true,

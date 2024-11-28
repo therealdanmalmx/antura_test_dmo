@@ -46,7 +46,7 @@ const UserProfile = () => {
           alignItems='center'
           height='100%'
           spacing={2}
-          sx={{ mt: { xs: 6, md: 4 } }} // Add margin-top of 30px on small screens
+          sx={{ mt: { xs: 6, md: 4 } }}
         >
           <div>
             {profileList.length > 0 && (
