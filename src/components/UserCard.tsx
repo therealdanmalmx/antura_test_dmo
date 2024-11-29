@@ -40,7 +40,7 @@ const UserCard = ({ profile }: { profile: UserProfileTypes }) => {
           sx={{ objectFit: "cover" }}
         />
 
-        <CardContent>
+        <CardContent sx={{ height: "150px" }}>
           <Typography gutterBottom variant='h5' component='div'>
             {name?.first} {name?.last}
           </Typography>
