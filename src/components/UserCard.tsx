@@ -10,14 +10,17 @@ import {
 } from "@mui/material";
 
 import UserProfileContext from "../context/UserProfileContext.tsx";
-import { UserProfileTypes } from "../types/types.tsx";
 
-const UserCard = ({ profile }: { profile: UserProfileTypes }) => {
-  const { addToList, removeFromList } = useContext(UserProfileContext);
-  const { name, location, email, cell, picture } =
-    profile.results.length > 0
-      ? profile.results[0]
-      : { name: {}, location: {}, email: "", cell: "", picture: {} };
+const UserCard = () => {
+  const { addToList, removeFromList, profile } = useContext(UserProfileContext);
+
+  const { name, location, email, cell, picture } = profile?.results?.[0] || {
+    name: {},
+    location: {},
+    email: "",
+    cell: "",
+    picture: {},
+  };
 
   const path = useLocation();
 
