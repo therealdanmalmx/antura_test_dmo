@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLocation } from "react-router";
+import { useMatch } from "react-router";
 import {
   Card,
   CardContent,
@@ -10,9 +10,12 @@ import {
 } from "@mui/material";
 
 import UserProfileContext from "../context/UserProfileContext.tsx";
+import { UserProfileTypes } from "../types/types.tsx";
 
-const UserCard = () => {
-  const { addToList, removeFromList, profile } = useContext(UserProfileContext);
+const UserCard = ({ profile }: { profile: UserProfileTypes }) => {
+  const { addToList, removeFromList } = useContext(UserProfileContext);
+  const isHomePage = useMatch("/");
+  const isListPage = useMatch("/list");
 
   const { name, location, email, cell, picture } = profile?.results?.[0] || {
     name: {},
@@ -22,7 +25,9 @@ const UserCard = () => {
     picture: {},
   };
 
-  const path = useLocation();
+  if (!profile) {
+    return;
+  }
 
   return (
     <Card
@@ -58,7 +63,7 @@ const UserCard = () => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      {path.pathname === "/" && (
+      {isHomePage && (
         <Button
           aria-label='Add user to list'
           onClick={() => addToList(profile.results[0].id.value)}
@@ -69,7 +74,7 @@ const UserCard = () => {
           Add to List
         </Button>
       )}
-      {path.pathname === "/list" && (
+      {isListPage && (
         <Button
           aria-label='Remove user from list'
           onClick={() => removeFromList(profile.results[0].id.value)}

@@ -45,11 +45,11 @@ export const UserProfileProvider: React.FC<{ children: ReactNode }> = ({
 
   const addToList = (id: string) => {
     if (profileList.some((profile) => profile.results[0].id.value === id)) {
-      toast.error("Profile is already in the list");
+      toast.error("User is already in the list");
     } else if (!profile) {
       return;
     } else {
-      setProfileList((prevList) => [...prevList, profile]);
+      setProfileList((profileList) => [...profileList, profile]);
     }
   };
 

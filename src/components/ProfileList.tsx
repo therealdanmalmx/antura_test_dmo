@@ -4,15 +4,11 @@ import UserCard from "./UserCard.tsx";
 import { Grid2 } from "@mui/material";
 import { Link } from "react-router";
 import { ArrowCircleLeft } from "@mui/icons-material";
-import { UserProfileTypes } from "../types/types.tsx";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 
 const ProfileList = () => {
-  const { profileList } = useContext(UserProfileContext) as {
-    profileList: UserProfileTypes[];
-  };
-
+  const { profileList } = useContext(UserProfileContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,6 +16,7 @@ const ProfileList = () => {
       navigate("/");
     }
   }, [profileList, navigate]);
+
   return (
     <>
       <Grid2
@@ -46,7 +43,6 @@ const ProfileList = () => {
           style={{ margin: "0 auto" }}
         >
           {profileList.map((profile) => {
-            console.log({ profile });
             return (
               <UserCard key={profile.results[0].id.value} profile={profile} />
             );
