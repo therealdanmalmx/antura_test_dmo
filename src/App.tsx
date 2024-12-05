@@ -5,12 +5,14 @@ import { BrowserRouter, Route } from "react-router";
 import { Routes } from "react-router";
 import ProfileList from "./components/ProfileList.tsx";
 import { Grid2 } from "@mui/material";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <Grid2 container flex='columns' justifyContent='center' alignItems='center'>
       <UserProfileProvider>
         <BrowserRouter>
+          <Toaster />
           <h1
             style={{
               textAlign: "center",

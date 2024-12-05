@@ -58,7 +58,7 @@ const UserCard = ({ profile }: { profile: UserProfileTypes }) => {
       {path.pathname === "/" && (
         <Button
           aria-label='Add user to list'
-          onClick={addToList}
+          onClick={() => addToList(profile.results[0].id.value)}
           variant='outlined'
           color='primary'
           sx={{ m: 1 }}

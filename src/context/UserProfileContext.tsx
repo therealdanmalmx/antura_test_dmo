@@ -1,5 +1,6 @@
 import React, { createContext, useState, ReactNode } from "react";
 import { UserProfileTypes } from "../types/types.tsx";
+import { toast } from "react-hot-toast";
 
 export interface UserProfileContextProps {
   profile: UserProfileTypes | null;
@@ -7,7 +8,7 @@ export interface UserProfileContextProps {
   isLoading: boolean;
   hasError: boolean;
   getRandomUser: () => void;
-  addToList: () => void;
+  addToList: (id: string) => void;
   removeFromList: (id: string) => void;
 }
 
@@ -42,8 +43,12 @@ export const UserProfileProvider: React.FC<{ children: ReactNode }> = ({
     }
   };
 
-  const addToList = () => {
-    if (profile) {
+  const addToList = (id: string) => {
+    if (profileList.some((profile) => profile.results[0].id.value === id)) {
+      toast.error("Profile is already in the list");
+    } else if (!profile) {
+      return;
+    } else {
       setProfileList((prevList) => [...prevList, profile]);
     }
   };
