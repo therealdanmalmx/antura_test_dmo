@@ -12,7 +12,7 @@ const UserProfile = () => {
 
   return (
     <>
-      {isLoading ? (
+      {isLoading && !hasError && (
         <Grid2
           container
           direction='column'
@@ -22,7 +22,8 @@ const UserProfile = () => {
         >
           <LoadingSpinner color='blue' size={100} loading={isLoading} />
         </Grid2>
-      ) : hasError ? (
+      )}
+      {hasError && (
         <Grid2
           container
           justifyContent='center'
@@ -38,7 +39,9 @@ const UserProfile = () => {
             </div>
           </Alert>
         </Grid2>
-      ) : (
+      )}
+
+      {!isLoading && !hasError && (
         <Grid2
           container
           direction='column'
