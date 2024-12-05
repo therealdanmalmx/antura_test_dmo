@@ -12,17 +12,6 @@ const UserProfile = () => {
 
   return (
     <>
-      {isLoading && !hasError && (
-        <Grid2
-          container
-          direction='column'
-          justifyContent='center'
-          alignItems='center'
-          height='75vh'
-        >
-          <LoadingSpinner color='blue' size={100} loading={isLoading} />
-        </Grid2>
-      )}
       {hasError && (
         <Grid2
           container
@@ -38,6 +27,17 @@ const UserProfile = () => {
               </Button>
             </div>
           </Alert>
+        </Grid2>
+      )}
+      {isLoading && (
+        <Grid2
+          container
+          direction='column'
+          justifyContent='center'
+          alignItems='center'
+          height='75vh'
+        >
+          <LoadingSpinner color='blue' size={100} loading={isLoading} />
         </Grid2>
       )}
 
